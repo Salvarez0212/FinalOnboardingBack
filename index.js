@@ -8,9 +8,6 @@ const PORT = process.env.PORT || 8080;
 app.use(cors());
 app.use(express.json()); // POST que pueda llegar el body
 
-db.insert({ name: "Pedro Perez" });
-db.insert({ name: "Maria Gomez" });
-
 app.get("/api/tasks", (req, res) => {
   const records = db.findAll();
   res.status(200).json(records);
